@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+	 <!-- Main Input For Receiving Query to our ML -->
+   	<form action="{{ url_for('predict')}}"method="post">
+    		<input type="text" name="Year" placeholder="Year" required="required" />
+        	<input type="text" name="Present_Price" placeholder="Present_Price" required="required" />
+		<input type="text" name="Kms_Driven" placeholder="Kms_Driven" required="required" />
+		<input type="text" name="Owner" placeholder="Owner" required="required" />
+		<input type="text" name="Fuel_Type_Diesel" placeholder="Fuel_Type_Diesel" required="required" />
+		<input type="text" name="Fuel_Type_Petrol" placeholder="Fuel_Type_Petrol" required="required" />
+		<input type="text" name="Seller_Type_Individual" placeholder="Seller_Type_Individual" required="required" />
+		<input type="text" name="Transmission_Manual" placeholder="Transmission_Manual" required="required" />
+
+        	<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    	</form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
